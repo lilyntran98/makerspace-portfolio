@@ -520,22 +520,17 @@
   </div>
   <div class="hero-visual">
     <div class="hero-grid">
-      <!-- Replace src="" with your actual photo paths, e.g. src="images/hero1.jpg" -->
-      <div class="hero-grid-cell placeholder">
-        <span class="ph-icon">🪵</span>
-        <span>Add photo</span>
+      <div class="hero-grid-cell">
+        <img src="images/IMG_4758.jpg" alt="Wooden charcuterie board"/>
       </div>
-      <div class="hero-grid-cell placeholder">
-        <span class="ph-icon">🔆</span>
-        <span>Add photo</span>
+      <div class="hero-grid-cell">
+        <img src="images/IMG_5082.jpg" alt="Digital clock"/>
       </div>
-      <div class="hero-grid-cell placeholder">
-        <span class="ph-icon">🖨️</span>
-        <span>Add photo</span>
+      <div class="hero-grid-cell">
+        <img src="images/IMG_4256.jpg" alt="Wooden laundry hanger"/>
       </div>
-      <div class="hero-grid-cell placeholder">
-        <span class="ph-icon">✂️</span>
-        <span>Add photo</span>
+      <div class="hero-grid-cell">
+        <img src="images/IMG_5432.jpg" alt="Wooden lantern"/>
       </div>
     </div>
   </div>
@@ -548,107 +543,201 @@
   <div class="divider"></div>
   <p class="section-desc">A collection of things I've designed, built, cut, printed, and assembled. Each project started as a sketch and ended on a shelf (or in someone's home).</p>
 
-  <div class="upload-note">
-    <strong>How to add your photos:</strong> Place your images in an <code>images/</code> folder next to this file, then replace the placeholder text in each <code>&lt;img src="..."&gt;</code> tag below with the correct filename, e.g. <code>src="images/my-project.jpg"</code>.
-  </div>
-
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
     <button class="filter-btn" onclick="filterProjects('laser', this)">Laser Cutting</button>
     <button class="filter-btn" onclick="filterProjects('3d', this)">3D Printing</button>
     <button class="filter-btn" onclick="filterProjects('wood', this)">Woodworking</button>
-    <button class="filter-btn" onclick="filterProjects('craft', this)">DIY Crafts</button>
+    <button class="filter-btn" onclick="filterProjects('electronics', this)">Electronics</button>
   </div>
 
   <div class="projects-grid" id="projectsGrid">
 
-    <!-- ── PROJECT CARD 1 ── -->
+    <!-- Wooden Speaker -->
     <article class="project-card" data-category="laser"
-      onclick="openLightbox('Engraved Keepsake Box', 'laser', 'A custom laser-engraved wooden box made as a gift. Designed in Inkscape and cut on the Epilog Fusion at the MakerSpace.', 'Epilog Fusion Laser Cutter · Inkscape', 'Spring 2025', 'Birch plywood', '')">
+      onclick="openLightbox('Wooden Speaker', 'Laser Cutting · Woodworking · Soldering', 'A fully functional wooden speaker built from scratch — laser cut panels, hand-assembled enclosure, and soldered electronics inside. One of my most involved MakerSpace builds.', 'Epilog Laser · Soldering iron · Hand tools', 'Northeastern MakerSpace', 'Plywood, Speaker components', 'images/IMG_1769.jpg')">
       <div class="project-thumb">
-        <!-- Replace with: <img src="images/your-photo.jpg" alt="Engraved Keepsake Box"/> -->
-        <span class="ph-big">🔆</span>
+        <img src="images/IMG_1769.jpg" alt="Wooden Speaker"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting · Woodworking · Soldering</span>
+        <h3 class="project-name">Wooden Speaker</h3>
+        <p class="project-desc">Fully functional speaker with laser cut enclosure and hand-soldered electronics.</p>
+        <p class="project-meta">Plywood · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Glass Cup -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Engraved Glass Cup', 'Laser Cutting', 'A glass cup with a custom laser-engraved design on the surface. The engraving process frosts the glass to create a beautiful matte contrast against the clear surface.', 'Epilog Laser Engraver', 'Northeastern MakerSpace', 'Glass', 'images/IMG_2222.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_2222.jpg" alt="Engraved Glass Cup"/>
       </div>
       <div class="project-info">
         <span class="project-tag">Laser Cutting</span>
-        <h3 class="project-name">Engraved Keepsake Box</h3>
-        <p class="project-desc">Custom-designed wooden box with a hand-illustrated pattern, made as a gift.</p>
-        <p class="project-meta">Birch Plywood · Spring 2025</p>
+        <h3 class="project-name">Engraved Glass Cup</h3>
+        <p class="project-desc">Custom laser-engraved glass cup with frosted design detail.</p>
+        <p class="project-meta">Glass · MakerSpace</p>
       </div>
     </article>
 
-    <!-- ── PROJECT CARD 2 ── -->
+    <!-- Phone Holder -->
     <article class="project-card" data-category="3d"
-      onclick="openLightbox('Geometric Planter', '3D Printing', 'Low-poly geometric planter designed in Fusion 360 and printed in terracotta-colored PLA. Holds a small succulent perfectly.', 'Ultimaker S5 · Fusion 360', 'Fall 2025', 'PLA Filament (terracotta)', '')">
+      onclick="openLightbox('3D Printed Phone Holder', '3D Printing', 'A practical desk phone holder designed and 3D printed at the MakerSpace. Sized to fit multiple phone models and angled for comfortable viewing.', 'Ultimaker / Prusa · Fusion 360', 'Northeastern MakerSpace', 'PLA Filament', 'images/IMG_3733.jpg')">
       <div class="project-thumb">
-        <span class="ph-big">🖨️</span>
+        <img src="images/IMG_3733.jpg" alt="3D Printed Phone Holder"/>
       </div>
       <div class="project-info">
         <span class="project-tag">3D Printing</span>
-        <h3 class="project-name">Geometric Planter</h3>
-        <p class="project-desc">Low-poly succulent planter, designed in Fusion 360 and printed in warm terracotta PLA.</p>
-        <p class="project-meta">PLA · Fall 2025</p>
+        <h3 class="project-name">Phone Holder</h3>
+        <p class="project-desc">Desk phone stand designed and printed for everyday use.</p>
+        <p class="project-meta">PLA · MakerSpace</p>
       </div>
     </article>
 
-    <!-- ── PROJECT CARD 3 ── -->
-    <article class="project-card" data-category="wood"
-      onclick="openLightbox('Floating Shelf', 'Woodworking', 'A simple, clean floating shelf made from reclaimed oak. Cut, sanded, stained, and mounted entirely by hand.', 'Table saw · Hand sander · Drill', 'Spring 2025', 'Reclaimed Oak', '')">
+    <!-- Microfluidic Device -->
+    <article class="project-card" data-category="3d"
+      onclick="openLightbox('Microfluidic Device', '3D Printing', 'A 3D printed microfluidic device — where my bioinformatics world meets the MakerSpace. Printed with fine resolution to achieve the small channel geometries required for fluid flow.', 'Resin / SLA Printer', 'Northeastern MakerSpace', 'Resin', 'images/IMG_4222.jpg')">
       <div class="project-thumb">
-        <span class="ph-big">🪵</span>
+        <img src="images/IMG_4222.jpg" alt="Microfluidic Device"/>
+
+      </div>
+      <div class="project-info">
+        <span class="project-tag">3D Printing</span>
+        <h3 class="project-name">Microfluidic Device</h3>
+        <p class="project-desc">High-resolution printed microfluidic device — science meets making.</p>
+        <p class="project-meta">Resin · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Laundry Hanger -->
+    <article class="project-card" data-category="wood"
+      onclick="openLightbox('Wooden Laundry Hanger', 'Woodworking', 'A wall-mounted wooden laundry hanger — functional and clean. Cut, sanded, and finished at the MakerSpace. A practical project that actually lives in our apartment now.', 'Table saw · Hand sander · Drill', 'Northeastern MakerSpace', 'Hardwood', 'images/IMG_4256.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_4256.jpg" alt="Wooden Laundry Hanger"/>
       </div>
       <div class="project-info">
         <span class="project-tag">Woodworking</span>
-        <h3 class="project-name">Floating Shelf</h3>
-        <p class="project-desc">Reclaimed oak shelf — my first woodworking project from scratch, start to finish.</p>
-        <p class="project-meta">Reclaimed Oak · Spring 2025</p>
+        <h3 class="project-name">Wooden Laundry Hanger</h3>
+        <p class="project-desc">Wall-mounted laundry hanger — practical, clean, and handmade.</p>
+        <p class="project-meta">Hardwood · MakerSpace</p>
       </div>
     </article>
 
-    <!-- ── PROJECT CARD 4 ── -->
-    <article class="project-card" data-category="craft"
-      onclick="openLightbox('Hand-Bound Journal', 'DIY Crafts', 'A Coptic-stitched hand-bound journal with a laser-engraved linen cover. 200 pages of warm cream paper inside.', 'Laser engraver · Bookbinding needles', 'Winter 2025', 'Linen, Cream paper', '')">
-      <div class="project-thumb">
-        <span class="ph-big">📖</span>
-      </div>
-      <div class="project-info">
-        <span class="project-tag">DIY Crafts</span>
-        <h3 class="project-name">Hand-Bound Journal</h3>
-        <p class="project-desc">Coptic-stitched journal with a laser-engraved linen cover, made as a personal project.</p>
-        <p class="project-meta">Linen · Winter 2025</p>
-      </div>
-    </article>
-
-    <!-- ── PROJECT CARD 5 ── -->
+    <!-- Coaster in progress -->
     <article class="project-card" data-category="laser"
-      onclick="openLightbox('Acrylic Night Light', 'Laser Cutting', 'Edge-lit acrylic panel with a laser-engraved floral design, mounted on a birch base with an LED strip inside.', 'Epilog Laser · Illustrator', 'Fall 2025', 'Clear acrylic, Birch, LED strip', '')">
+      onclick="openLightbox('Wooden Coasters — In Progress', 'Laser Cutting', 'A behind-the-scenes look at the coaster-making process — fresh off the laser cutter before sanding and finishing. The smell of fresh-cut wood is one of the best parts of using the MakerSpace.', 'Epilog Laser Cutter', 'Northeastern MakerSpace', 'Birch plywood', 'images/IMG_4748.jpg')">
       <div class="project-thumb">
-        <span class="ph-big">💡</span>
+        <img src="images/IMG_4748.jpg" alt="Coaster in progress"/>
       </div>
       <div class="project-info">
         <span class="project-tag">Laser Cutting</span>
-        <h3 class="project-name">Acrylic Night Light</h3>
-        <p class="project-desc">Edge-lit acrylic with an engraved floral design — glows beautifully at night.</p>
-        <p class="project-meta">Acrylic · Fall 2025</p>
+        <h3 class="project-name">Coasters — In Progress</h3>
+        <p class="project-desc">Fresh off the laser cutter — a peek behind the making process.</p>
+        <p class="project-meta">Birch Plywood · MakerSpace</p>
       </div>
     </article>
 
-    <!-- ── PROJECT CARD 6 ── -->
-    <article class="project-card" data-category="3d"
-      onclick="openLightbox('Cable Organizer Clips', '3D Printing', 'A set of desk cable clips in varying sizes, designed parametrically in OpenSCAD so any cable diameter can be accommodated.', 'Prusa MK4 · OpenSCAD', 'Winter 2025', 'PETG Filament', '')">
+    <!-- Finished coasters -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Wooden Coasters', 'Laser Cutting', 'Finished set of laser-cut wooden coasters with engraved patterns. Sanded smooth and finished with a light coat of oil. These make great gifts.', 'Epilog Laser Cutter · Hand sander', 'Northeastern MakerSpace', 'Birch plywood', 'images/IMG_4757.jpg')">
       <div class="project-thumb">
-        <span class="ph-big">🔌</span>
+        <img src="images/IMG_4757.jpg" alt="Finished Wooden Coasters"/>
       </div>
       <div class="project-info">
-        <span class="project-tag">3D Printing</span>
-        <h3 class="project-name">Cable Organizer Clips</h3>
-        <p class="project-desc">Parametric cable clips in four sizes — practical, satisfying to design, and actually used daily.</p>
-        <p class="project-meta">PETG · Winter 2025</p>
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Wooden Coasters</h3>
+        <p class="project-desc">Laser-engraved coaster set, sanded and finished with oil.</p>
+        <p class="project-meta">Birch Plywood · MakerSpace</p>
       </div>
     </article>
 
-    <!-- ── Add more project cards by duplicating the block above ── -->
+    <!-- Charcuterie board -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Wooden Charcuterie Board', 'Laser Cutting', 'A laser-engraved wooden charcuterie board — one of my favorite projects. Custom design engraved onto a smooth hardwood board, finished and food-safe. A popular gift item.', 'Epilog Laser Cutter · Hand sander', 'Northeastern MakerSpace', 'Hardwood', 'images/IMG_4758.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_4758.jpg" alt="Wooden Charcuterie Board"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Charcuterie Board</h3>
+        <p class="project-desc">Custom laser-engraved hardwood board, finished and food-safe.</p>
+        <p class="project-meta">Hardwood · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Digital Clock front -->
+    <article class="project-card" data-category="electronics"
+      onclick="openLightbox('Digital Clock', 'Arduino · Soldering', 'A fully functional digital clock built with Arduino and hand-soldered components. The front panel display shows time with a clean minimal aesthetic. One of my first electronics projects at the MakerSpace.', 'Arduino · Soldering iron · Multimeter', 'Northeastern MakerSpace', 'Arduino, PCB components, Acrylic', 'images/IMG_5082.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_5082.jpg" alt="Digital Clock front"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Arduino · Soldering</span>
+        <h3 class="project-name">Digital Clock</h3>
+        <p class="project-desc">Arduino-powered digital clock with hand-soldered components.</p>
+        <p class="project-meta">Arduino · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Digital Clock back -->
+    <article class="project-card" data-category="electronics"
+      onclick="openLightbox('Digital Clock — Inside View', 'Arduino · Soldering', 'A look at the back of the digital clock — all hand-soldered connections and tidy wiring. Getting the electronics clean and organized was just as satisfying as the finished display.', 'Arduino · Soldering iron · Multimeter', 'Northeastern MakerSpace', 'Arduino, PCB components, wiring', 'images/IMG_5083.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_5083.jpg" alt="Digital Clock back"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Arduino · Soldering</span>
+        <h3 class="project-name">Digital Clock — Inside View</h3>
+        <p class="project-desc">Hand-soldered internals — clean wiring and tidy connections.</p>
+        <p class="project-meta">Arduino · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Cat coaster -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Cat Wooden Coaster', 'Laser Cutting', 'A laser-cut wooden coaster featuring a cat silhouette design. Cut from birch plywood and lightly sanded for a smooth finish. A small project with a lot of charm.', 'Epilog Laser Cutter', 'Northeastern MakerSpace', 'Birch plywood', 'images/IMG_5431.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_5431.jpg" alt="Cat Wooden Coaster"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Cat Coaster</h3>
+        <p class="project-desc">Laser-cut birch coaster with a cat silhouette — small but charming.</p>
+        <p class="project-meta">Birch Plywood · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Wooden lantern -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Wooden Lantern', 'Laser Cutting', 'A laser-cut wooden lantern with a geometric cutout pattern. When lit from inside, the pattern casts beautiful shadows on the surrounding walls. Assembled from flat-cut panels with press-fit joints.', 'Epilog Laser Cutter · Inkscape', 'Northeastern MakerSpace', 'Birch plywood', 'images/IMG_5432.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_5432.jpg" alt="Wooden Lantern"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Wooden Lantern</h3>
+        <p class="project-desc">Geometric laser-cut lantern — casts beautiful shadow patterns when lit.</p>
+        <p class="project-meta">Birch Plywood · MakerSpace</p>
+      </div>
+    </article>
+
+    <!-- Engraved box -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Engraved Wooden Box', 'Laser Cutting', 'A laser-engraved wooden box with a detailed surface pattern. The engraving burns away the top layer of wood to reveal the design, creating a rich contrast between the natural and burned surfaces.', 'Epilog Laser Cutter · Inkscape', 'Northeastern MakerSpace', 'Birch plywood', 'images/IMG_5735.jpg')">
+      <div class="project-thumb">
+        <img src="images/IMG_5735.jpg" alt="Engraved Wooden Box"/>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Engraved Wooden Box</h3>
+        <p class="project-desc">Detailed laser engraving on birch — rich contrast between natural and burned wood.</p>
+        <p class="project-meta">Birch Plywood · MakerSpace</p>
+      </div>
+    </article>
+
+-->
 
   </div>
 </section>
@@ -657,7 +746,7 @@
 <section id="about" class="about-strip">
   <div class="about-portrait">
     <!-- Replace with: <img src="images/portrait.jpg" alt="Lily Lee"/> -->
-    <span class="about-portrait-ph">🪴</span>
+    <img src="images/photo1.jpg" alt="Lily Lee"/>
   </div>
   <div class="about-text">
     <p class="section-label">About Me</p>
@@ -676,10 +765,11 @@
       <span class="chip">Laser Cutting</span>
       <span class="chip">3D Printing</span>
       <span class="chip">Woodworking</span>
+      <span class="chip">Arduino</span>
+      <span class="chip">Soldering</span>
       <span class="chip">Inkscape</span>
       <span class="chip">Fusion 360</span>
-      <span class="chip">OpenSCAD</span>
-      <span class="chip">Hand Bookbinding</span>
+      <span class="chip">Epilog Laser</span>
     </div>
   </div>
 </section>

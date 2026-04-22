@@ -1,6 +1,6 @@
-# Lily's MakerSpace Portfolio
+# 🪵 Lily's MakerSpace Portfolio
 
-A warm, handcrafted personal portfolio site showcasing laser cutting, 3D printing, woodworking, and DIY craft projects made at Northeastern's MakerSpace.
+A warm, handcrafted personal portfolio showcasing laser cutting, 3D printing, woodworking, electronics, and DIY projects made at Northeastern's MakerSpace.
 
 **Live site:** `https://lilyntran98.github.io/makerspace-portfolio`
 
@@ -8,84 +8,33 @@ A warm, handcrafted personal portfolio site showcasing laser cutting, 3D printin
 
 ## 📁 Folder Structure
 
-Set up your repo like this:
-
 ```
 makerspace-portfolio/
-├── index.html          ← the portfolio (already done!)
-├── README.md           ← this file
-└── images/             ← put ALL your photos here
-    ├── hero1.jpg
-    ├── hero2.jpg
-    ├── hero3.jpg
-    ├── hero4.jpg
-    ├── portrait.jpg
-    ├── project-box.jpg
-    ├── project-planter.jpg
-    └── ...
+├── index.html
+├── README.md
+└── images/
+    ├── photo1.jpg           ← About section portrait
+    ├── IMG_1769.jpg         ← Wooden speaker
+    ├── IMG_2222.jpg         ← Engraved glass cup
+    ├── IMG_3733.jpg         ← 3D printed phone holder
+    ├── IMG_4222.jpg         ← Microfluidic device
+    ├── IMG_4256.jpg         ← Wooden laundry hanger
+    ├── IMG_4748.jpg         ← Coasters in progress
+    ├── IMG_4757.jpg         ← Finished wooden coasters
+    ├── IMG_4758.jpg         ← Wooden charcuterie board
+    ├── IMG_4761.jpg         ← Finished wooden coasters (alt)
+    ├── IMG_5082.jpg         ← Digital clock (front)
+    ├── IMG_5083.jpg         ← Digital clock (back)
+    ├── IMG_5431.jpg         ← Cat wooden coaster
+    ├── IMG_5432.jpg         ← Wooden lantern
+    └── IMG_5735.jpg         ← Engraved wooden box
 ```
 
 ---
 
-## 🖼️ How to Add Your Photos
+## ➕ How to Add a New Project
 
-### Hero section (top 4 photos)
-
-Find this block in `index.html` (around line 200) and replace each placeholder `<div>` with an `<img>` tag:
-
-```html
-<!-- BEFORE (placeholder) -->
-<div class="hero-grid-cell placeholder">
-  <span class="ph-icon">🪵</span>
-  <span>Add photo</span>
-</div>
-
-<!-- AFTER (your photo) -->
-<div class="hero-grid-cell">
-  <img src="images/hero1.jpg" alt="My laser cut project"/>
-</div>
-```
-
-### Portrait photo
-
-Find the `about-portrait` div (around line 290) and replace the placeholder:
-
-```html
-<!-- BEFORE -->
-<span class="about-portrait-ph">🪴</span>
-
-<!-- AFTER -->
-<img src="images/portrait.jpg" alt="Lily Lee"/>
-```
-
-### Project card photos
-
-Each project card has a `project-thumb` div. Replace the placeholder emoji span with an img tag:
-
-```html
-<!-- BEFORE -->
-<div class="project-thumb">
-  <span class="ph-big">🔆</span>
-</div>
-
-<!-- AFTER -->
-<div class="project-thumb">
-  <img src="images/project-box.jpg" alt="Engraved Keepsake Box"/>
-</div>
-```
-
-Also update the `onclick` on the card — the last parameter is the lightbox image path:
-
-```html
-<!-- Find the onclick and update the last "" to your image path -->
-onclick="openLightbox('Engraved Keepsake Box', 'laser', '...desc...', '...tools...', 'Spring 2025', 'Birch plywood', 'images/project-box.jpg')"
-```
-
----
-
-## ➕ How to Add a New Project Card
-
-Copy and paste this template inside the `<div id="projectsGrid">` section:
+Copy and paste this template inside the `<div id="projectsGrid">` section of `index.html`:
 
 ```html
 <article class="project-card" data-category="laser"
@@ -94,7 +43,7 @@ Copy and paste this template inside the `<div id="projectsGrid">` section:
     'Laser Cutting',
     'A description of your project — what it is, how you made it, and why.',
     'Tools used (e.g. Epilog Laser · Inkscape)',
-    'Season Year',
+    'Northeastern MakerSpace',
     'Materials used',
     'images/your-photo.jpg'
   )">
@@ -105,62 +54,38 @@ Copy and paste this template inside the `<div id="projectsGrid">` section:
     <span class="project-tag">Laser Cutting</span>
     <h3 class="project-name">Your Project Title</h3>
     <p class="project-desc">Short one-liner description for the card.</p>
-    <p class="project-meta">Material · Season Year</p>
+    <p class="project-meta">Material · MakerSpace</p>
   </div>
 </article>
 ```
 
 **For `data-category`**, use one of:
-- `laser` → shows under "Laser Cutting" filter
-- `3d` → shows under "3D Printing" filter
-- `wood` → shows under "Woodworking" filter
-- `craft` → shows under "DIY Crafts" filter
+- `laser` → Laser Cutting filter
+- `3d` → 3D Printing filter
+- `wood` → Woodworking filter
+- `electronics` → Electronics filter
 
 ---
 
-
-### Step 3 — Enable GitHub Pages
-
-1. Go to your repo → **Settings** → **Pages**
-2. Under **Source**, choose **Deploy from a branch**
-3. Select branch: `main`, folder: `/ (root)`
-4. Click **Save**
-
-Your site will be live at:
-```
-https://YOUR-USERNAME.github.io/makerspace-portfolio
-```
-(It may take 1–2 minutes to appear the first time.)
-
-### Step 4 — Update the footer link
-
-In `index.html`, find this line near the bottom and replace the GitHub URL:
-
-```html
-<a href="https://github.com/YOUR-USERNAME/makerspace-portfolio" target="_blank">GitHub</a>
-```
-
----
-
-## 🎨 Customizations
+## 🎨 Quick Customizations
 
 | What | Where in index.html |
 |------|---------------------|
-| Your name in the nav | Line ~170: `Lily Lee — MakerSpace` |
-| Hero title / subtitle | Lines ~190–200 |
-| About me paragraph | Lines ~295–305 |
-| Skill chips | Lines ~310–320 |
-| Footer email link | Near bottom: `mailto:...` |
-| Process steps text | Lines ~340–380 |
+| Name in nav | `Lily Lee — MakerSpace` |
+| Hero title / subtitle | Hero section, ~line 190 |
+| About me paragraphs | About strip section, ~line 295 |
+| Skill chips | Below about text, ~line 310 |
+| Process steps | Process section, ~line 340 |
+| Footer GitHub link | Bottom of file |
 
 ---
 
 ## 📸 Photo Tips
 
-- **Recommended size:** 1200×900px or larger (landscape) for project cards
-- **Portrait photo:** 800×800px (square) works best
-- **Format:** `.jpg` (smaller file size) or `.png`
-- **File names:** use lowercase, no spaces — e.g. `laser-box.jpg` not `Laser Box Photo (1).jpg`
+- Keep photos under **1MB** for smooth GitHub uploads (use [squoosh.app](https://squoosh.app) to compress)
+- **No spaces in filenames** — use `photo1.jpg` not `photo 1.jpg`
+- Landscape photos (4:3 ratio) work best for project cards
+- Square photos work best for the About portrait
 
 ---
 

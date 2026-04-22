@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lily's MakerSpace Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #F9F5EF;
+      --warm-bg:  #F2EBE0;
+      --sand:     #E0D4C0;
+      --terracotta: #C4714A;
+      --terra-dk: #9A4F2F;
+      --wood:     #7A4F2D;
+      --bark:     #4A3020;
+      --sage:     #7A8C6A;
+      --sage-lt:  #B4C4A0;
+      --muted:    #8A7A6A;
+      --text:     #2E1F0F;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--sand);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--wood);
+      letter-spacing: 0.03em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+    }
+    .hero-text {
+      padding: 5rem 4rem 5rem 6rem;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.15;
+      color: var(--bark);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { color: var(--terracotta); font-style: italic; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 380px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: var(--terracotta);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: var(--terra-dk); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--terracotta);
+      color: var(--terracotta);
+      margin-left: 1rem;
+    }
+    .btn-outline:hover { background: var(--terracotta); color: #fff; }
+
+    .hero-visual {
+      height: 90vh;
+      background: var(--warm-bg);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-grid-cell {
+      background: var(--sand);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-grid-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+    .hero-grid-cell:hover img { transform: scale(1.04); }
+    .hero-grid-cell.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .hero-grid-cell.placeholder span {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ph-icon { font-size: 1.8rem; opacity: 0.4; }
+
+    /* ── SECTION HEADERS ── */
+    .section-wrap { padding: 6rem 6rem; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--bark);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 540px;
+      margin-bottom: 3.5rem;
+    }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--terracotta);
+      margin: 1.2rem 0 2rem;
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      padding: 0.4rem 1.1rem;
+      border: 1.5px solid var(--sand);
+      background: transparent;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: #fff;
+    }
+
+    /* ── PROJECT GRID ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2px;
+    }
+    .project-card {
+      position: relative;
+      background: var(--warm-bg);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .project-card.hidden { display: none; }
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .project-thumb .ph-big {
+      font-size: 3rem;
+      opacity: 0.25;
+    }
+    .project-card:hover .project-thumb img { transform: scale(1.06); }
+    .project-info {
+      padding: 1.4rem 1.5rem 1.6rem;
+    }
+    .project-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+    }
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--bark);
+      margin-bottom: 0.4rem;
+    }
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .project-meta {
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+      color: var(--sage);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(40, 25, 10, 0.88);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      background: var(--cream);
+      max-width: 860px;
+      width: 90vw;
+      max-height: 88vh;
+      overflow-y: auto;
+      border-radius: 2px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .lb-img-wrap {
+      background: var(--warm-bg);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .lb-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lb-content { padding: 2.5rem 2.5rem; }
+    .lb-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.6rem;
+    }
+    .lb-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--bark);
+      margin-bottom: 0.6rem;
+    }
+    .lb-divider {
+      width: 36px;
+      height: 2px;
+      background: var(--terracotta);
+      margin: 1rem 0;
+    }
+    .lb-desc { font-size: 0.95rem; color: var(--muted); font-weight: 300; line-height: 1.8; }
+    .lb-meta { margin-top: 1.2rem; }
+    .lb-meta dt { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-top: 0.8rem; }
+    .lb-meta dd { font-size: 0.9rem; color: var(--text); margin: 0; }
+    .lb-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 36px;
+      height: 36px;
+      background: var(--cream);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bark);
+      transition: background 0.2s;
+    }
+    .lb-close:hover { background: var(--sand); }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--warm-bg);
+      padding: 5rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-portrait {
+      aspect-ratio: 1;
+      background: var(--sand);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .about-portrait-ph { font-size: 3rem; opacity: 0.3; }
+    .about-text .section-label { margin-bottom: 0.3rem; }
+    .about-text blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--bark);
+      line-height: 1.5;
+      margin: 1.2rem 0 1.8rem;
+      border-left: 3px solid var(--terracotta);
+      padding-left: 1.4rem;
+    }
+    .about-body { font-size: 0.97rem; color: var(--muted); font-weight: 300; line-height: 1.85; }
+    .skill-chips { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .chip {
+      padding: 0.3rem 0.9rem;
+      background: var(--sand);
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--wood);
+    }
+
+    /* ── PROCESS / HOW I MAKE ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 3rem;
+    }
+    .process-step {
+      background: var(--warm-bg);
+      padding: 2rem 1.8rem;
+    }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--sand);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--bark);
+      margin-bottom: 0.5rem;
+    }
+    .step-body { font-size: 0.83rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bark);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 0.8rem; }
+
+    /* ── UPLOAD INSTRUCTIONS ── */
+    .upload-note {
+      background: #FFF8F2;
+      border-left: 3px solid var(--terracotta);
+      border-radius: 0 2px 2px 0;
+      padding: 1rem 1.5rem;
+      margin-bottom: 3rem;
+      font-size: 0.88rem;
+      color: var(--wood);
+    }
+    .upload-note strong { font-weight: 700; }
+    .upload-note code {
+      background: var(--sand);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      font-family: monospace;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { height: 50vw; }
+      .hero-text { padding: 3rem 2rem; }
+      .section-wrap { padding: 4rem 2rem; }
+      .about-strip { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2rem; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .lightbox-inner { grid-template-columns: 1fr; }
+      footer { padding: 2rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Lily Lee — MakerSpace</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="mailto:tran.nhi2@northeastern.edu">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow">✦ MakerSpace Portfolio</span>
+    <h1 class="hero-title">
+      Made by<br/><em>hand,</em><br/>shaped by<br/>curiosity.
+    </h1>
+    <p class="hero-sub">
+      Laser cutting, 3D printing, woodworking, and crafts —
+      creative projects made at Northeastern's MakerSpace.
+    </p>
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="mailto:tran.nhi2@northeastern.edu" class="btn btn-outline">Say Hello</a>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-grid">
+      <!-- Replace src="" with your actual photo paths, e.g. src="images/hero1.jpg" -->
+      <div class="hero-grid-cell placeholder">
+        <span class="ph-icon">🪵</span>
+        <span>Add photo</span>
+      </div>
+      <div class="hero-grid-cell placeholder">
+        <span class="ph-icon">🔆</span>
+        <span>Add photo</span>
+      </div>
+      <div class="hero-grid-cell placeholder">
+        <span class="ph-icon">🖨️</span>
+        <span>Add photo</span>
+      </div>
+      <div class="hero-grid-cell placeholder">
+        <span class="ph-icon">✂️</span>
+        <span>Add photo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section-wrap">
+  <p class="section-label">My Work</p>
+  <h2 class="section-title">Projects</h2>
+  <div class="divider"></div>
+  <p class="section-desc">A collection of things I've designed, built, cut, printed, and assembled. Each project started as a sketch and ended on a shelf (or in someone's home).</p>
+
+  <div class="upload-note">
+    <strong>How to add your photos:</strong> Place your images in an <code>images/</code> folder next to this file, then replace the placeholder text in each <code>&lt;img src="..."&gt;</code> tag below with the correct filename, e.g. <code>src="images/my-project.jpg"</code>.
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+    <button class="filter-btn" onclick="filterProjects('laser', this)">Laser Cutting</button>
+    <button class="filter-btn" onclick="filterProjects('3d', this)">3D Printing</button>
+    <button class="filter-btn" onclick="filterProjects('wood', this)">Woodworking</button>
+    <button class="filter-btn" onclick="filterProjects('craft', this)">DIY Crafts</button>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+
+    <!-- ── PROJECT CARD 1 ── -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Engraved Keepsake Box', 'laser', 'A custom laser-engraved wooden box made as a gift. Designed in Inkscape and cut on the Epilog Fusion at the MakerSpace.', 'Epilog Fusion Laser Cutter · Inkscape', 'Spring 2025', 'Birch plywood', '')">
+      <div class="project-thumb">
+        <!-- Replace with: <img src="images/your-photo.jpg" alt="Engraved Keepsake Box"/> -->
+        <span class="ph-big">🔆</span>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Engraved Keepsake Box</h3>
+        <p class="project-desc">Custom-designed wooden box with a hand-illustrated pattern, made as a gift.</p>
+        <p class="project-meta">Birch Plywood · Spring 2025</p>
+      </div>
+    </article>
+
+    <!-- ── PROJECT CARD 2 ── -->
+    <article class="project-card" data-category="3d"
+      onclick="openLightbox('Geometric Planter', '3D Printing', 'Low-poly geometric planter designed in Fusion 360 and printed in terracotta-colored PLA. Holds a small succulent perfectly.', 'Ultimaker S5 · Fusion 360', 'Fall 2025', 'PLA Filament (terracotta)', '')">
+      <div class="project-thumb">
+        <span class="ph-big">🖨️</span>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">3D Printing</span>
+        <h3 class="project-name">Geometric Planter</h3>
+        <p class="project-desc">Low-poly succulent planter, designed in Fusion 360 and printed in warm terracotta PLA.</p>
+        <p class="project-meta">PLA · Fall 2025</p>
+      </div>
+    </article>
+
+    <!-- ── PROJECT CARD 3 ── -->
+    <article class="project-card" data-category="wood"
+      onclick="openLightbox('Floating Shelf', 'Woodworking', 'A simple, clean floating shelf made from reclaimed oak. Cut, sanded, stained, and mounted entirely by hand.', 'Table saw · Hand sander · Drill', 'Spring 2025', 'Reclaimed Oak', '')">
+      <div class="project-thumb">
+        <span class="ph-big">🪵</span>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Woodworking</span>
+        <h3 class="project-name">Floating Shelf</h3>
+        <p class="project-desc">Reclaimed oak shelf — my first woodworking project from scratch, start to finish.</p>
+        <p class="project-meta">Reclaimed Oak · Spring 2025</p>
+      </div>
+    </article>
+
+    <!-- ── PROJECT CARD 4 ── -->
+    <article class="project-card" data-category="craft"
+      onclick="openLightbox('Hand-Bound Journal', 'DIY Crafts', 'A Coptic-stitched hand-bound journal with a laser-engraved linen cover. 200 pages of warm cream paper inside.', 'Laser engraver · Bookbinding needles', 'Winter 2025', 'Linen, Cream paper', '')">
+      <div class="project-thumb">
+        <span class="ph-big">📖</span>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">DIY Crafts</span>
+        <h3 class="project-name">Hand-Bound Journal</h3>
+        <p class="project-desc">Coptic-stitched journal with a laser-engraved linen cover, made as a personal project.</p>
+        <p class="project-meta">Linen · Winter 2025</p>
+      </div>
+    </article>
+
+    <!-- ── PROJECT CARD 5 ── -->
+    <article class="project-card" data-category="laser"
+      onclick="openLightbox('Acrylic Night Light', 'Laser Cutting', 'Edge-lit acrylic panel with a laser-engraved floral design, mounted on a birch base with an LED strip inside.', 'Epilog Laser · Illustrator', 'Fall 2025', 'Clear acrylic, Birch, LED strip', '')">
+      <div class="project-thumb">
+        <span class="ph-big">💡</span>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Laser Cutting</span>
+        <h3 class="project-name">Acrylic Night Light</h3>
+        <p class="project-desc">Edge-lit acrylic with an engraved floral design — glows beautifully at night.</p>
+        <p class="project-meta">Acrylic · Fall 2025</p>
+      </div>
+    </article>
+
+    <!-- ── PROJECT CARD 6 ── -->
+    <article class="project-card" data-category="3d"
+      onclick="openLightbox('Cable Organizer Clips', '3D Printing', 'A set of desk cable clips in varying sizes, designed parametrically in OpenSCAD so any cable diameter can be accommodated.', 'Prusa MK4 · OpenSCAD', 'Winter 2025', 'PETG Filament', '')">
+      <div class="project-thumb">
+        <span class="ph-big">🔌</span>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">3D Printing</span>
+        <h3 class="project-name">Cable Organizer Clips</h3>
+        <p class="project-desc">Parametric cable clips in four sizes — practical, satisfying to design, and actually used daily.</p>
+        <p class="project-meta">PETG · Winter 2025</p>
+      </div>
+    </article>
+
+    <!-- ── Add more project cards by duplicating the block above ── -->
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-strip">
+  <div class="about-portrait">
+    <!-- Replace with: <img src="images/portrait.jpg" alt="Lily Lee"/> -->
+    <span class="about-portrait-ph">🪴</span>
+  </div>
+  <div class="about-text">
+    <p class="section-label">About Me</p>
+    <blockquote>"I make things because making helps me think."</blockquote>
+    <p class="about-body">
+      Hi! I'm Lily — a bioinformatics grad student at Northeastern by day and a MakerSpace regular by whenever-I-can-sneak-in.
+      I started visiting the MakerSpace out of curiosity and haven't really stopped. There's something deeply satisfying
+      about taking a design from a screen and turning it into something you can hold in your hands.
+    </p>
+    <p class="about-body" style="margin-top:0.8rem;">
+      My projects tend to be a mix of gifts, practical household things, and experiments that didn't
+      quite work — all equally valuable. I love the intersection of precision (laser cutting tolerances,
+      print settings) and the warmth of natural materials like wood and linen.
+    </p>
+    <div class="skill-chips">
+      <span class="chip">Laser Cutting</span>
+      <span class="chip">3D Printing</span>
+      <span class="chip">Woodworking</span>
+      <span class="chip">Inkscape</span>
+      <span class="chip">Fusion 360</span>
+      <span class="chip">OpenSCAD</span>
+      <span class="chip">Hand Bookbinding</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section-wrap" style="background: var(--cream);">
+  <p class="section-label">How I Work</p>
+  <h2 class="section-title">The Making Process</h2>
+  <div class="divider"></div>
+  <div class="process-grid">
+    <div class="process-step">
+      <p class="step-num">01</p>
+      <h3 class="step-title">Sketch & Design</h3>
+      <p class="step-body">Every project starts with a rough sketch — on paper, on a napkin, in my notes app at midnight. From there I move into Inkscape, Fusion 360, or OpenSCAD depending on what I'm making.</p>
+    </div>
+    <div class="process-step">
+      <p class="step-num">02</p>
+      <h3 class="step-title">Material & Machine</h3>
+      <p class="step-body">I choose materials based on the feel I want — birch for warmth, acrylic for precision, PLA for color and form. Then I prep settings on whichever machine fits the job.</p>
+    </div>
+    <div class="process-step">
+      <p class="step-num">03</p>
+      <h3 class="step-title">Make & Iterate</h3>
+      <p class="step-body">First attempts rarely go right. I print test pieces, run scrap cuts, and adjust. Some of the best details come out of mistakes — a laser overburn that made an interesting texture, a failed layer that inspired a new design direction.</p>
+    </div>
+    <div class="process-step">
+      <p class="step-num">04</p>
+      <h3 class="step-title">Finish & Share</h3>
+      <p class="step-body">Sanding, staining, assembling, painting — the finishing step is where the project becomes real. Most of what I make ends up as gifts, or living on a shelf in our apartment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Lily Lee</span>
+  <div class="footer-links">
+    <a href="#projects">Work</a>
+    <a href="#about">About</a>
+    <a href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank">GitHub</a>
+    <a href="mailto:tran.nhi2@northeastern.edu">Email</a>
+  </div>
+  <p class="footer-copy">Made with ♥ at Northeastern MakerSpace</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-inner">
+    <div class="lb-img-wrap" id="lbImg">
+      <span style="font-size:3rem;opacity:0.2;">🖼</span>
+    </div>
+    <div class="lb-content">
+      <p class="lb-tag" id="lbTag">Category</p>
+      <h2 class="lb-title" id="lbTitle">Project Title</h2>
+      <div class="lb-divider"></div>
+      <p class="lb-desc" id="lbDesc">Description goes here.</p>
+      <dl class="lb-meta">
+        <dt>Tools Used</dt><dd id="lbTools">—</dd>
+        <dt>Date</dt><dd id="lbDate">—</dd>
+        <dt>Materials</dt><dd id="lbMats">—</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<script>
+  function filterProjects(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  function openLightbox(title, tag, desc, tools, date, mats, imgSrc) {
+    document.getElementById('lbTitle').textContent = title;
+    document.getElementById('lbTag').textContent = tag;
+    document.getElementById('lbDesc').textContent = desc;
+    document.getElementById('lbTools').textContent = tools;
+    document.getElementById('lbDate').textContent = date;
+    document.getElementById('lbMats').textContent = mats;
+    const imgWrap = document.getElementById('lbImg');
+    if (imgSrc) {
+      imgWrap.innerHTML = `<img src="${imgSrc}" alt="${title}"/>`;
+    } else {
+      imgWrap.innerHTML = `<span style="font-size:3rem;opacity:0.2;">🖼</span>`;
+    }
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightboxOutside(e) {
+    if (e.target.id === 'lightbox') closeLightbox();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
-# 🪵 Lily's MakerSpace Portfolio
+# Lily's MakerSpace Portfolio
 
 A warm, handcrafted personal portfolio site showcasing laser cutting, 3D printing, woodworking, and DIY craft projects made at Northeastern's MakerSpace.
 
-**Live site:** `https://YOUR-USERNAME.github.io/makerspace-portfolio`
+**Live site:** `https://lilyntran98.github.io/makerspace-portfolio`
 
 ---
 
@@ -118,31 +118,6 @@ Copy and paste this template inside the `<div id="projectsGrid">` section:
 
 ---
 
-## 🚀 Deploying to GitHub Pages
-
-### Step 1 — Create a GitHub repo
-
-1. Go to [github.com/new](https://github.com/new)
-2. Name it `makerspace-portfolio` (or anything you like)
-3. Set it to **Public**
-4. Click **Create repository**
-
-### Step 2 — Upload your files
-
-Option A — via the GitHub website (easiest):
-1. Click **Add file → Upload files**
-2. Drag in `index.html`, `README.md`, and your entire `images/` folder
-3. Click **Commit changes**
-
-Option B — via Git on your computer:
-```bash
-git init
-git add .
-git commit -m "Initial portfolio upload"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/makerspace-portfolio.git
-git push -u origin main
-```
 
 ### Step 3 — Enable GitHub Pages
 

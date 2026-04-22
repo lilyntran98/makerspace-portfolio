@@ -2,7 +2,7 @@
 
 A warm, handcrafted personal portfolio showcasing laser cutting, 3D printing, woodworking, electronics, and DIY projects made at Northeastern's MakerSpace.
 
-**Live site:** `https://lilyntran98.github.io/makerspace-portfolio`
+**Live site:** [https://lilyntran98.github.io/makerspace-portfolio](https://lilyntran98.github.io/makerspace-portfolio)
 
 ---
 
